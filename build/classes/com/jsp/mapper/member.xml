@@ -14,9 +14,9 @@
 	<insert id="join" parameterClass="MemberVO" >
 		INSERT INTO
 		member
-		(id, pwd, name,  phone, address, email)
+		(id, pwd, name, phone, address, email, picture, enabled)
 		VALUES
-		(#id#, #pwd#, #name#,  #phone#, #address#, #email#)
+		(#id#, #pwd#, #name#,  #phone#, #address#, #email#, #picture#, 1)
 	</insert>
 	
 	<select id="getMemberList" resultClass="MemberVO">

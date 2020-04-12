@@ -68,6 +68,20 @@
 	             			<th>이메일</th>
 	             			<th>전화번호</th>
 	             		</tr>
+	             		<c:forEach items="${memberList }" var="member">
+	             		<tr>
+	             			<td><a href="javascript:OpenWindow('detail?id=${member.id}','회원상세보기','700','560')"> ${member.id}</a></td>
+	             			<td>${member.name}</td>
+	             			<td>${member.pwd}</td>
+	             			<td>${member.email}</td>
+	             			<td>${member.phone}</td>
+	             		</tr>
+	             		</c:forEach>
+	             		<c:if test="${memberList == null}">
+	             		<tr>
+	             			<td colspan="12">회원 정보가 없습니다.</td>
+	             		</tr>
+	             		</c:if>
 				 	</table>	
             	</div>
            	</div>            

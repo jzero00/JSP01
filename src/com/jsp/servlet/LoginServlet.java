@@ -27,7 +27,7 @@ public class LoginServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		String url = "redirect:/main";
+		String url = "redirect:/common/main";
 		
 		String id = request.getParameter("id");
 		String pwd = request.getParameter("pwd");

@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true" %>
-
 <script>
 $('input#inputFile').on('change', function(event) {
 	$('input[name="checkUpload"]').val(0);

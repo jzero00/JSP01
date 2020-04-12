@@ -43,7 +43,7 @@ body{
 		 </div>
 		 <!-- /.card-header -->
 		 <!-- form start -->
-		 <form role="form" action="login" method="post">
+		 <form role="form" action="<%=request.getContextPath() %>/common/login" method="post">
 		   <div class="card-body">
 		     <div class="form-group">
 		       <label for="exampleInputEmail1">아이디</label>
@@ -51,13 +51,13 @@ body{
 		     </div>
 		     <div class="form-group">
 		       <label for="exampleInputPassword1">비밀번호</label>
-		       <input type="password" class="form-control" name="pwd" value="${param.pwd}" placeholder="PASSWORD">
+		       <input type="password" class="form-control" name="pwd" placeholder="PASSWORD">
 		     </div>
 		   </div>
 		   <!-- /.card-body -->
 		    <div class="card-footer">
 		      <input type="submit" class="btn btn-primary" value="로그인" />
-		      <input type="button" onclick="OpenWindow('member/regist','회원등록',800,600);" class="btn btn-primary float-right" value="회원가입" />
+		      <input type="button" onclick="OpenWindow('/member/join','회원등록',800,600);" class="btn btn-primary float-right" value="회원가입" />
 		    </div>
 		  </form>
 		</div>
