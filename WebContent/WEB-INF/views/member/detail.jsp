@@ -53,25 +53,25 @@
 	                <div class="form-group row">
 	                  <label for="inputPassword3" class="col-sm-3 control-label text-right">패스워드</label>
 	                  <div class="col-sm-9">
-	                    <input name="pwd" type="password" class="form-control" id="inputPassword3" value="${member.pwd }">
+	                    <input name="pwd" type="password" readonly class="form-control" id="inputPassword3" value="${member.pwd }">
 	                  </div>
 	                </div>
 	                <div class="form-group row">
 	                  <label for="inputPassword3" class="col-sm-3 control-label text-right">이&nbsp;&nbsp;름</label>
 	                  <div class="col-sm-9">
-	                    <input name="pwd" type="text" class="form-control" id="inputPassword3" value="${member.name }">
+	                    <input name="pwd" type="text" readonly class="form-control" id="inputPassword3" value="${member.name }">
 	                  </div>
 	               </div>
 	                <div class="form-group row">
 	                  <label for="inputPassword3" class="col-sm-3 control-label text-right">이메일</label>
 	                  <div class="col-sm-9">
-	                    <input name="email" type="email" class="form-control" id="inputPassword3" value="${member.email }">
+	                    <input name="email" type="email" readonly class="form-control" id="inputPassword3" value="${member.email }">
 	                  </div>
 	                </div>
 	                <div class="form-group row">
 	                  <label for="inputPassword3" class="col-sm-3 control-label text-right">전화번호</label>
 	                  <div class="col-sm-9">   
-	                  	<input name="phone" type="text" class="form-control" id="inputPassword3" value="${member.phone.substring(0,3) }-${member.phone.substring(3,7)}-${member.phone.substring(7) }">	                
+	                  	<input name="phone" type="text" readonly class="form-control" id="inputPassword3" value="${member.phone.substring(0,3) }-${member.phone.substring(3,7)}-${member.phone.substring(7) }">	                
 	                  </div>                  
 	                </div>               
 	              </div> <!-- card body -->

@@ -64,5 +64,14 @@ public class MemberDaoImpl implements MemberDao {
 		loginUser = (MemberVO) smc.queryForObject("member.getMember", id);
 		return loginUser;
 	}
+	
+	@Override
+	public void updateMember(MemberVO member) {
+		try {
+			smc.update("member.updateMember", member);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
 
 }

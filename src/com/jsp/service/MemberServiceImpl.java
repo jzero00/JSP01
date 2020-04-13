@@ -50,4 +50,8 @@ public class MemberServiceImpl implements MemberService {
 		return dao.getMember(id);
 	}
 
+	public void updateMember(MemberVO member) {
+		dao.updateMember(member);
+	}
+
 }

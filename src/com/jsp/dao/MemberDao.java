@@ -14,5 +14,7 @@ public interface MemberDao {
 	public List<MemberVO> getMemberList();
 
 	MemberVO getMember(String id) throws SQLException;
+
+	void updateMember(MemberVO member);
 	
 }

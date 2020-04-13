@@ -19,9 +19,9 @@ public class MemberDetailServlet extends HttpServlet {
        
     
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String url = "member/detail";
 		
 		String id = request.getParameter("id");
+		String url = "member/detail";
 		
 		MemberVO member = null;
 		try {
