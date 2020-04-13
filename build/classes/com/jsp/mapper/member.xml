@@ -30,4 +30,28 @@
 	 	WHERE id = #id#
 	</select>
 
+	<update id="updateMember" parameterClass="MemberVO">
+		UPDATE member
+		SET
+		pwd = #pwd#,
+		name = #name#,
+		email = #email#,
+		phone = #phone#,
+		picture = #picture#
+		WHERE id = #id#
+	</update>
+	
+	<update id="disableMember">
+		UPDATE member
+		SET
+		enabled = 0
+		WHERE id = #id#
+	</update>
+	
+	<update id="enableMember">
+		UPDATE member
+		SET
+		enabled = 1
+		WHERE id = #id#
+	</update>
 </sqlMap>

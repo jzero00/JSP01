@@ -74,4 +74,22 @@ public class MemberDaoImpl implements MemberDao {
 		}
 	}
 
+	@Override
+	public void disableMember(String id) {
+		try {
+			smc.update("member.disableMember",id);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+
+	@Override
+	public void enableMember(String id) {
+		try {
+			smc.update("member.enableMember",id);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+
 }

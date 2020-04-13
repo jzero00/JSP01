@@ -124,15 +124,6 @@
 	<input id="inputFile" name="pictureFile" type="file" class="form-control" style="display:none;">
 	<input type="hidden" id="oldFile" name="oldPicture" value="${member.picture }" />
 	<input type="hidden" name="checkUpload" value="${empty member.picture ? '0':'1' }" />	
-		<%-- <c:choose>
-			<c:when test="${empty member.picture }">
-				0
-			</c:when>			
-			<c:otherwise>
-				1
-			</c:otherwise>
-		</c:choose> --%>
-	
 </form>
 
 <%@ include file="/WEB-INF/views/include/open_footer.jsp" %>

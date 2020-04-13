@@ -167,8 +167,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="<%=request.getContextPath()%>/member/picture=${loginUser.picture}" class="img-circle elevation-2" alt="User Image">
+          <img src="<%=request.getContextPath()%>/member/picture/get?picture=${loginUser.picture}"
+          onerror="this.src='<%=request.getContextPath() %>/resources/images/user.jpg'"
+          class="img-circle elevation-2" alt="User Image" style="">
         </div>
+      </div>
+      <div class="user-panel mt-3 pb-3 mb-3 d-flex" style="height: auto; width: 13rem;">
         <div class="info">
           <div class="row">
           	<a class="col-md-8" href="" class="d-block">${loginUser.id }</a>

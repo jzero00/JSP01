@@ -17,4 +17,7 @@ public interface MemberService {
 
 	public List<MemberVO> getMemberList();
 	
+	public void disableMember(String id);
+	
+	public void enableMember(String id);
 }

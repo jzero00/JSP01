@@ -54,4 +54,14 @@ public class MemberServiceImpl implements MemberService {
 		dao.updateMember(member);
 	}
 
+	@Override
+	public void disableMember(String id) {
+		dao.disableMember(id);
+	}
+
+	@Override
+	public void enableMember(String id) {
+		dao.enableMember(id);
+	}
+
 }

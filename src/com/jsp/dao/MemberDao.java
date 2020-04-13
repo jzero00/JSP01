@@ -15,6 +15,10 @@ public interface MemberDao {
 
 	MemberVO getMember(String id) throws SQLException;
 
-	void updateMember(MemberVO member);
+	public void updateMember(MemberVO member);
+	
+	public void disableMember(String id);
+	
+	public void enableMember(String id);
 	
 }

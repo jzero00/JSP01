@@ -32,7 +32,7 @@
   
     <section class="content register-page" style="height: 586.391px;">       
 		<div class="register-box" style="min-width:450px;">
-	    	<form role="form" class="form-horizontal" action="regist.do" method="post">
+	    	<form role="form" class="form-horizontal" action="detail" method="post">
 	        	<div class="register-card-body" >
 	        		<div class="card-header">
 	        			
@@ -77,19 +77,26 @@
 	              </div> <!-- card body -->
 	              <div class="card-footer">
 	              	<div class="row">
-			          		<div class="col-sm-3 text-center">
-			          			<button type="button" id="modifyBtn" class="btn btn-warning ">수 정</button>
-			          		</div>
-			          		<div class="col-sm-3text-center">
-				          		<button type="button" id="deleteBtn" class="btn btn-danger" >삭 제</button>
-			          		</div>
-			          		<div class="col-sm-3 text-center">
-			          			<button type="button" id="stopBtn" class="btn btn-info" >정 지</button>
-			          		</div>
-			          		<div class="col-sm-3 text-center">
-			            		<button type="button" id="listBtn" onclick="CloseWindow();" class="btn btn-primary pull-right">닫 기</button>
-			            	</div>
-		          	    </div>  	
+		          		<div class="col-sm-3 text-center">
+		          			<button type="button" id="modifyBtn" class="btn btn-warning ">수 정</button>
+		          		</div>
+		          		<div class="col-sm-3text-center">
+			          		<button type="button" id="deleteBtn" class="btn btn-danger" >삭 제</button>
+		          		</div>
+		          		<c:if test="${member.enabled eq 1}">
+		          		<div class="col-sm-3 text-center">
+		          			<button type="button" id="disableBtn" class="btn btn-info" >비활성</button>
+		          		</div>
+		          		</c:if>
+		          		<c:if test="${member.enabled eq 0}">
+		          		<div class="col-sm-3 text-center">
+		          			<button type="button" id="enableBtn" class="btn btn-info" >활 성</button>
+		          		</div>
+		          		</c:if>
+		          		<div class="col-sm-3 text-center">
+		            		<button type="button" id="listBtn" onclick="CloseWindow();" class="btn btn-primary pull-right">닫 기</button>
+		            	</div>
+	          	    </div>  	
 	              </div> 		          	     
 	      	  </form>
       	  </div>
@@ -135,9 +142,16 @@
 		})
 	});
 	
-	$('button#stopBtn').on('click', function(){
-		location.href="stop?id=${member.id}";
+	$('button#disableBtn').on('click', function(){
+		location.href="disabled?id=${member.id}";
 	})
+	
+	$('button#enableBtn').on('click', function(){
+		location.href="enabled?id=${member.id}";
+	})
+	function CloseWindow() {
+		window.close();
+	}
 </script>
 
 
