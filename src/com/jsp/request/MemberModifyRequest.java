@@ -6,10 +6,12 @@ public class MemberModifyRequest {
 	
 	private String id;
 	private String pwd;
+	private String name;
+	private String authority;
+
 	private String email;
 	private String[] phone;
 	private String picture;
-	private String name;
 	private String address;
 	
 	public MemberModifyRequest() {}
@@ -24,7 +26,13 @@ public class MemberModifyRequest {
 		this.name = name;
 		this.address = address;
 	}
-
+	
+	public String getAuthority() {
+		return authority;
+	}
+	public void setAuthority(String authority) {
+		this.authority = authority;
+	}
 	public String getId() {
 		return id;
 	}
@@ -71,10 +79,10 @@ public class MemberModifyRequest {
 		MemberVO member = new MemberVO();
 		member.setId(id);
 		member.setPwd(pwd);
+		member.setName(name);
 		member.setEmail(email);
 		member.setPicture(picture);
 		member.setPhone(phone[0]+phone[1]+phone[2]);
-		member.setName(name);
 		member.setAddress(address);
 		
 		return member;

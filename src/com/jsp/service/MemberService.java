@@ -20,4 +20,6 @@ public interface MemberService {
 	public void disableMember(String id);
 	
 	public void enableMember(String id);
+
+	void updateMember(MemberVO member) throws SQLException;
 }

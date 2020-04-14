@@ -45,12 +45,13 @@ public class MemberServiceImpl implements MemberService {
 	}
 
 	@Override
-	public MemberVO getMember(String id) throws SQLException{
+	public MemberVO getMember(String id) throws SQLException {
 
 		return dao.getMember(id);
 	}
-
-	public void updateMember(MemberVO member) {
+	
+	@Override
+	public void updateMember(MemberVO member) throws SQLException {
 		dao.updateMember(member);
 	}
 

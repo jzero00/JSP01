@@ -4,6 +4,6 @@
 </body>
 <script>
 	alert('${member.id}님의 정보가 수정되었습니다.');
-	location.href="/member/detail?id=${member.id}";
-	opener.location.reload();
+	window.opener.location.reload(true);
+	location.href="/member/detail?id=${member.id}";	
 </script>

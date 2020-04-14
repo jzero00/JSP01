@@ -1,5 +1,6 @@
 package com.jsp.servlet;
 
+import java.io.File;
 import java.io.IOException;
 import java.sql.SQLException;
 
@@ -13,8 +14,8 @@ import javax.servlet.http.HttpSession;
 import com.jsp.dto.MemberVO;
 import com.jsp.request.MemberModifyRequest;
 import com.jsp.service.MemberServiceImpl;
+import com.jsp.util.GetUploadPath;
 import com.jsp.util.ViewResolver;
-import com.sun.org.apache.regexp.internal.recompile;
 
 @WebServlet("/member/modify")
 public class MemberModifyServlet extends HttpServlet {
@@ -51,23 +52,30 @@ public class MemberModifyServlet extends HttpServlet {
 		String name = request.getParameter("name");
 		String address = request.getParameter("address");
 		
+		MemberModifyRequest memberReq = new MemberModifyRequest(id, pwd, email, phone, picture, name, address);
+		MemberVO member = memberReq.toMemberVO();
 		
-		HttpSession session = request.getSession();
-		if(session.getId() == null) {
-			return;
-		}
 		
 		try {
-			MemberModifyRequest memberReq = new MemberModifyRequest(id, pwd, email, phone, picture, name, address);
-			MemberVO member = memberReq.toMemberVO();
 			MemberServiceImpl.getInstance().updateMember(member);
-			if(id.equals(session.getId())) {
+			
+			HttpSession session = request.getSession();
+			MemberVO loginUser = (MemberVO) session.getAttribute("loginUser");
+			if(member.getId().equals(loginUser.getId())){
 				session.setAttribute("loginUser", member);
 			}
-			request.setAttribute("member", member);
+
 		} catch (Exception e) {
 			url = "error/500error";
+			String oldFileName = member.getPicture();
+			String uploadPath=GetUploadPath.getUploadPath("member.picture.upload");
+			File oldFile=new File(uploadPath+File.separator+oldFileName);
+			if(oldFile.exists()) {
+				oldFile.delete();
+			}
 		}
+		request.setAttribute("member", member);
+		
 		ViewResolver.view(request, response, url);
 	}
 
