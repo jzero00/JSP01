@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true" %>
+<%@ taglib prefix="decorator" uri="http://www.opensymphony.com/sitemesh/decorator" %>
 
 <!DOCTYPE html>
 <!--
@@ -13,17 +14,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
 
+  <title><decorator:title default="ZERO PRO1" /></title>
+
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/bootstrap/plugins/fontawesome-free/css/all.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/bootstrap/dist/css/adminlte.min.css">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
-	
-  
   <!-- jQuery -->
   <script src="<%=request.getContextPath()%>/resources/bootstrap/plugins/jquery/jquery.min.js"></script>
 	
+<decorator:head />
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
@@ -156,29 +158,36 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="index3.html" class="brand-link">
-      <img src="<%=request.getContextPath()%>/resources/bootstrap/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
-           style="opacity: .8">
-      <span class="brand-text font-weight-light">AdminLTE 3</span>
+    <a href="/common/main" class="brand-link">
+<%--       <img src="<%=request.getContextPath()%>/resources/bootstrap/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+           style="opacity: .8"> --%>
+      <span class="brand-text font-weight-light">ZERO PRO1</span>
     </a>
 
     <!-- Sidebar -->
     <div class="sidebar">
+    <div style="color: white; font: 25px; text-align: center;">User Profile</div>
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
           <img src="<%=request.getContextPath()%>/member/picture/get?picture=${loginUser.picture}"
-          onerror="this.src='<%=request.getContextPath() %>/resources/images/user.jpg'"
-          class="img-circle elevation-2" alt="User Image" style="">
+          	   onerror="this.src='<%=request.getContextPath() %>/resources/images/user.jpg'" 
+          	   alt="User Image">
         </div>
-      </div>
-      <div class="user-panel mt-3 pb-3 mb-3 d-flex" style="height: auto; width: 13rem;">
         <div class="info">
           <div class="row">
-          	<a class="col-md-8" href="" class="d-block">${loginUser.id }</a>
-          	<button class="btn btn-xs btn-primary col-xs-3 " type="button" 
+          	<div class="col-md-2" ></div>
+          	<div class="col-md-6" >
+          	<button class="btn btn-xs btn-primary col-xs-2 " type="button" 
+          		onclick="OpenWindow('<%=request.getContextPath() %>/member/detail?id=${loginUser.id }','프로필정보','800','700');" >MyInfo</button>
+          	<br/><br/>
+          	<button class="btn btn-xs btn-primary col-xs-2 " type="button" 
           		onclick="location.href='<%=request.getContextPath() %>/common/logout';" >Logout</button>
+          	</div>
+          	
+          	
           </div>
+          <span style="color: white;">${loginUser.id }</span><br/>
           <a href="tel:${loginUser.phone }">tel : ${loginUser.phone }</a><br/>
           <a href="mailto:${loginUser.email }">email : ${loginUser.email }</a>			          
         </div>

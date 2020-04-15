@@ -1,8 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
-<%@ include file="/WEB-INF/views/include/header.jsp" %>
-
+<body>
 <div class="content-wrapper" style="min-height: 1416.81px;">
     <!-- Content Header (Page header) -->
     <section class="content-header">
@@ -135,6 +133,4 @@
     </section>
     <!-- /.content -->
   </div>
-
-<%@ include file="/WEB-INF/views/include/footer.jsp" %>
-
+</body>

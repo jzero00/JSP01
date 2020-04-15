@@ -26,8 +26,6 @@ public class MemberJoin extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		request.setCharacterEncoding("utf-8");
-		
 		String url="member/join_success";
 				
 		String id=request.getParameter("id");

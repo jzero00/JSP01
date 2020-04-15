@@ -22,24 +22,19 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 <style>
-body{
+body.login-page{
 	background-image:url('<%=request.getContextPath()%>/resources/images/intro.jpg');
 	background-position:center;
 	background-size:cover;
 	background-repeat:no-repeat;
 }
 </style>
-</head>
-<body>
-<div class="wrapper">
-  <div class="row">
-	  <div class="col-sm-4">
-	  </div>
-	  <div class="col-sm-4">
+<body class="login-page">
+<div class="login-box">
 	  <!-- card card-primary start -->
 	  <div class="card card-primary">
 		 <div class="card-header">
-		   <h3 class="card-title">로그인</h3>
+		   <h3 class="card-title" style="text-align: center;">로그인</h3>
 		 </div>
 		 <!-- /.card-header -->
 		 <!-- form start -->
@@ -63,8 +58,6 @@ body{
 		</div>
 		<!-- card card-primary end -->
 	  </div>
-  </div>
-</div>
 <!-- ./wrapper -->
 <!-- REQUIRED SCRIPTS -->
 </body>

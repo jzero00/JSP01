@@ -45,7 +45,6 @@ public class UploadPictureServlet extends HttpServlet {
 			throw new IOException("파일 업로드 실패"); // 사용자 화면 용 (ajax)
 		}
 		
-		response.setCharacterEncoding("utf-8");
 		PrintWriter out = response.getWriter();
 		
 		out.print(fileName);

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:web="http://xmlns.jcp.org/xml/ns/javaee">
+
+
+<!-- 인코딩 필터 -->
+  <filter>
+    <filter-name>setCharacterEncodingFilter</filter-name>
+    <filter-class>
+			org.apache.catalina.filters.SetCharacterEncodingFilter
+		</filter-class>
+    <init-param>
+      <param-name>encoding</param-name>
+      <param-value>utf-8</param-value>
+    </init-param>
+  </filter>
+  <filter-mapping>
+    <filter-name>setCharacterEncodingFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  
+<!-- 로그인체크필터 -->
+  <filter>
+    <filter-name>loginCheckFilter</filter-name>
+    <filter-class>com.jsp.filter.LoginCheckFilter</filter-class>
+    <init-param>
+      <param-name>exclude</param-name>
+      <param-value>resources,common,.jsp,.jpg</param-value>
+    </init-param>
+  </filter>
+  <filter-mapping>
+    <filter-name>loginCheckFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  
+  
+  <!-- 회원 비활성화 체크 필터 -->
+  <filter>
+    <filter-name>disabledCheckFilter</filter-name>
+    <filter-class>com.jsp.filter.MemberDisabledFilter</filter-class>
+    <init-param>
+      <param-name>disabled</param-name>
+      <param-value>modify,remove,disabled,regist</param-value>
+    </init-param>
+  </filter>
+  <filter-mapping>
+    <filter-name>disabledCheckFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  
+  
+<!-- sitemesh 필터 -->
+  <filter>
+    <filter-name>sitemesh</filter-name>
+    <filter-class>
+			com.opensymphony.sitemesh.webapp.SiteMeshFilter
+	</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>sitemesh</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+</web-app>

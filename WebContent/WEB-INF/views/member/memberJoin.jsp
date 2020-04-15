@@ -1,20 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE>
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>회원가입 페이지</title>
-  <!-- Font Awesome Icons -->
-  <link rel="stylesheet" href="<%=request.getContextPath() %>/resources/bootstrap/plugins/fontawesome-free/css/all.min.css">
-  <!-- Theme style -->
-  <link rel="stylesheet" href="<%=request.getContextPath() %>/resources/bootstrap/dist/css/adminlte.min.css">
-  <!-- Google Font: Source Sans Pro -->
-  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
-  <!-- jQuery -->
-  <script src="<%=request.getContextPath()%>/resources/bootstrap/plugins/jquery/jquery.min.js"></script>
-
-</head>
+<%@ page trimDirectiveWhitespaces="true"%>
 <body>
 <div class="content-wrapper">
 	<!-- Content Header (Page header) -->
@@ -149,9 +135,7 @@
 	<input type="hidden" name="checkUpload" value="0" />	
 </form>
 <!-- ./wrapper -->
-</body>
-</html>
 
-<%@ include file="/WEB-INF/views/include/open_footer.jsp" %>
 <%@ include file="picture_js.jsp" %>
 <%@ include file="form_valid.jsp" %>
+</body>

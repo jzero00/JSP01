@@ -2,10 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
-<%@ include file="/WEB-INF/views/include/open_header.jsp" %>
-
-
+<body>
   <div class="content-wrapper">
 	<!-- Content Header (Page header) -->
 	  <section class="content-header">
@@ -119,16 +116,11 @@
   </div>
   <!-- /.content-wrapper -->
 
-<form role="imageForm" action="upload/picture" method="post" 
-	  enctype="multipart/form-data">
+<form role="imageForm" action="upload/picture" method="post" enctype="multipart/form-data">
 	<input id="inputFile" name="pictureFile" type="file" class="form-control" style="display:none;">
 	<input type="hidden" id="oldFile" name="oldPicture" value="${member.picture }" />
 	<input type="hidden" name="checkUpload" value="${empty member.picture ? '0':'1' }" />	
 </form>
-
-<%@ include file="/WEB-INF/views/include/open_footer.jsp" %>
-<%@ include file="picture_js.jsp" %>
-
 <script>
 	var imageURL="picture/get?picture=${member.picture}";
 	$('div#pictureView').css({'background-image':'url('+imageURL+')',
@@ -153,11 +145,5 @@
 		history.go(-1);
 	}
 </script>
-
-
-
-
-
-
-  
-  
+<%@ include file="picture_js.jsp" %>
+</body>
