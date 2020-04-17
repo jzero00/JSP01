@@ -34,7 +34,7 @@ public class MemberDisabledFilter implements Filter {
 		
 		MemberVO loginUser = (MemberVO) httpReq.getSession().getAttribute("loginUser");
 		
-		if(loginUser.getEnabled() != 1) {
+		if(loginUser != null && loginUser.getEnabled() != 1) {
 			String url = "common/disabled";
 			ViewResolver.view(httpReq, httpResp, url);
 		} else {

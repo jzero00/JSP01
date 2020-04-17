@@ -33,7 +33,7 @@
   </filter-mapping>
   
   
-  <!-- 회원 비활성화 체크 필터 -->
+<!--   회원 비활성화 체크 필터 -->
   <filter>
     <filter-name>disabledCheckFilter</filter-name>
     <filter-class>com.jsp.filter.MemberDisabledFilter</filter-class>
@@ -52,7 +52,7 @@
   <filter>
     <filter-name>sitemesh</filter-name>
     <filter-class>
-			com.opensymphony.sitemesh.webapp.SiteMeshFilter
+	  com.opensymphony.sitemesh.webapp.SiteMeshFilter
 	</filter-class>
   </filter>
   <filter-mapping>
